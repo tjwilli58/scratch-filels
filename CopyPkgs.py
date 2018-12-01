@@ -9,9 +9,10 @@ to convert the output file to utf-8 encoding.
 """
 import os, os.path, shutil
 
-pkgdir = r'C:\Users\timothy.j.williams1\AppData\Local\conda\conda\pkgs'
-infile = open(r'L:\Downloads\Anaconda\PsychoPy\anaconda-py3-pkgs.txt')
-channelpath = r'L:\Downloads\Anaconda\PsychoPy\PerceptLabChannel'
+rootdir = os.path.join(os.environ['userprofile'],'Documents','Psychopy')
+pkgdir = os.path.join(os.environ['userprofile'],'Anaconda3','pkgs')
+infile = open(os.path.join(rootdir,'perceptionlab-pkgs.txt'))
+channelpath = os.path.join(rootdir,'PerceptLabChannel')
 for l in infile:
     if '@EXPLICIT' in l:
         break
